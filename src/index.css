@@ -1,0 +1,136 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+ 
+  margin: 3px;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+  
+}
+a {
+  font-weight: 500;
+  color: #111112;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  /* min-width: 320px;
+  min-height: 100vh; */
+
+  
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color:rgb(131, 75, 182);
+    
+    background-color:rgb(254, 253, 255)
+}
+
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #bfbef4;
+  }
+}
+  .sticky-top {
+    background-color:rgb(4, 4, 4);
+    height: 32vh;
+    width:100vw;
+    z-index: 9;
+    position: sticky;
+    top: 0;
+    text-align: center;
+  }
+  .sticky-top1 {
+    background-color: white;
+    z-index: 8;
+    position: sticky;
+    top:30vh;
+  }
+  .roll{
+    
+    z-index:7;
+    width:100%;
+    
+    top: 40vh;
+    
+  }
+  .container {
+    display: flex; 
+    flex-direction: column;
+
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+    
+  }
+  .width{
+    width:600px;
+  }
+  .color-red{
+color:red;
+  }
+  .red{
+    color:red;
+  }
+  .green{
+    color:green;
+    
+  }
+  .orange{
+    color:orange;
+  }
+  
