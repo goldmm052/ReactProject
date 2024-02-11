@@ -7,11 +7,13 @@ class MeetingStore {
         makeObservable(this, {
             meetings: observable,
             addMeeting: action,
-            colorMeeting: action,
         })
     }
     setMeeting = (meetings) => {
+        
         if (meetings.length) {
+            const currentDateTime = new Date();
+            meetings = meetings.filter(meeting =>new Date( meeting.dateTime) > currentDateTime)
             meetings.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime))
             this.meetings = [...meetings]
         } else {
@@ -33,19 +35,6 @@ class MeetingStore {
 
         this.meetings = this.meetings.filter(meeting => meeting.dateTime > currentDateTime);
     }
-    colorMeeting(dateTime) {
-        const currentDate = new Date();
-        const meetingDate = new Date(dateTime);
-        const restDay = 7 - meetingDate.getDay()
 
-        const lastDayOfWeek = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - currentDate.getDay() + 7);
-        if (meetingDate > currentDate && meetingDate <= lastDayOfWeek)
-            return 'orange'
-        if (meetingDate.getDate() === currentDate.getDate() &&
-            meetingDate.getMonth() === currentDate.getMonth() &&
-            meetingDate.getFullYear() === currentDate.getFullYear())
-            return 'red';
-        return 'green';
-    }
 }
 export default new MeetingStore();

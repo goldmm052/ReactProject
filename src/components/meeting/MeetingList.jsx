@@ -15,13 +15,13 @@ const MeetingList=(observer(()=>{
     return (
       <>
 
-       
+       <div style={{display:"flex",flexDirection:"column"}}>
        {
        
        MeetingStore.meetings.map((meeting,index)=>{
          return (<><div key={index} > <Meeting meeting={meeting}/></div></>)
        })}
-        
+        </div>
       </>
     )
   }))

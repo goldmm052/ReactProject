@@ -21,11 +21,6 @@ const AddMeeting = (observer(() => {
   const [newClientPhone, setnewClientPhone] = useState('')
   const handleDateChange = (e) => {
     const dateObj = new Date(e.$d);
-const dayOfWeek = dateObj.getDay();
- if(dayOfWeek===6) {
-  alert("It is not possible to make an appointment for Saturday")
-  DateTimePicker.autoFocus} 
-  else
     setSelectedDateMeeting(e.$d);
 
   }
@@ -44,89 +39,90 @@ const dayOfWeek = dateObj.getDay();
       {
         serviceName: selectedServiceMeeting,
         serviceDescription: "aaa",
-        servicePrice:500,
+        servicePrice: 500,
         dateTime: selectedDateMeeting,
         clientName: newClientName,
         clientPhone: newClientPhone,
         clientEmail: "aaa"
       }).then(x => {
-        
-    setSelectedDateMeeting('');
-    setSelectedServiceMeeting('');
-    setnewClientName('');
-    setnewClientPhone('');
-  })
+
+        setSelectedDateMeeting('');
+        setSelectedServiceMeeting('');
+        setnewClientName('');
+        setnewClientPhone('');
+      })
   }
   return (
     <>
-      <div class ="roll">
-      <div class="container">
-        <Box sx={{ minWidth: 260}}>
-          <FormControl  fullWidth style={{ width: "260px" }}>
-            <InputLabel id="select-label">Service</InputLabel>
-          
-            <Select class="flex1"  required
-              style={{ width: "260px" }}
-              value={selectedServiceMeeting}
-              label="Select a Service"
-              onChange={handleServiceMeetingChange}
-              autoFocus
-            >
-             
-              {ServiceStore.services.map((service, index) => {
-                return (<MenuItem key={index} value={service.name}>{service.name}</MenuItem>)
-              })}
+      <div class="roll">
+        <div class="container">
+          <Box sx={{ minWidth: 260 }}>
+            <FormControl fullWidth style={{ width: "260px" }}>
+              <InputLabel id="select-label">Service</InputLabel>
 
-            </Select>
-               
-        
+              <Select class="flex1" required
+                style={{ width: "270px" }}
+                value={selectedServiceMeeting}
+                label="Select a Service"
+                onChange={handleServiceMeetingChange}
+                autoFocus
+              >
 
-        <LocalizationProvider dateAdapter={AdapterDayjs} class="flex2">
-      <DemoContainer components={['DateTimePicker']}>
-        <DateTimePicker id="selectedDate1"
-            name='selectedDate'
-            lable='Select Date'
-            value={selectedDateMeeting}
-            onChange={handleDateChange} />
-      </DemoContainer>
-    </LocalizationProvider>
-    
-    <div style={{ width: '270px' }} component="form" noValidate sx={{ mt: 0.3 }}label="Client Details">
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="ClientName"
-          label="Client Name"
-          name="clientName"
-          type="text"
-          value={newClientName} onChange={handlenewClientNameChange}
-          
+                {ServiceStore.services.map((service, index) => {
+                  return (<MenuItem key={index} value={service.name}>{service.name}</MenuItem>)
+                })}
 
-        />
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="ClientPhone"
-          name="ClientPhone"
-          label="ClientPhone"
-          type="text"
-           value={newClientPhone} onChange={handlenewClientPhoneChange}
-
-        />
-                
-        
-      </div>
+              </Select>
 
 
-        <div>
-          <Button class="button" variant="contained" color="success" onClick={handleAddMeeting}>Add Meeting</Button>
+
+              <LocalizationProvider dateAdapter={AdapterDayjs} class="flex2">
+                <DemoContainer style={{ width: '270px' }} components={['DateTimePicker']}>
+                  <DateTimePicker slotProps={{
+                    textField: {
+
+                      error: false,
+                    }
+                  }} id="selectedDate1"
+                    name='selectedDate'
+                    lable='Select Date'
+                    value={selectedDateMeeting}
+                    onChange={handleDateChange} />
+                </DemoContainer>
+              </LocalizationProvider>
+
+              <div style={{ width: '270px' }} noValidate sx={{ mt: 0.3 }} label="Client Details">
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="ClientName"
+                  label="Client Name"
+                  name="clientName"
+                  type="text"
+                  value={newClientName} onChange={handlenewClientNameChange}
+
+
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="ClientPhone"
+                  name="ClientPhone"
+                  label="ClientPhone"
+                  type="text"
+                  value={newClientPhone} onChange={handlenewClientPhoneChange}
+                />
+
+              </div>
+              <div>
+                <Button class="button" variant="contained" color="success" onClick={handleAddMeeting}>Add Meeting</Button>
+              </div>
+
+            </FormControl>
+          </Box>
         </div>
-       
-        </FormControl>
-        </Box>
-      </div>
       </div>
     </>
   )

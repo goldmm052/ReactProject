@@ -85,26 +85,28 @@ button:focus-visible {
   }
 }
   .sticky-top {
+    display: flex;
+    flex-direction: row;
     background-color:rgb(4, 4, 4);
     height: 32vh;
     width:100vw;
     z-index: 9;
     position: sticky;
     top: 0;
-    text-align: center;
+    text-align:center;
   }
   .sticky-top1 {
     background-color: white;
     z-index: 8;
     position: sticky;
-    top:30vh;
+    top:32vh;
   }
   .roll{
-    
+  
     z-index:7;
     width:100%;
-    
-    top: 40vh;
+    align-items: center;
+    top: 38vh;
     
   }
   .container {

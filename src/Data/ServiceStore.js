@@ -15,16 +15,14 @@ class ServiceStore {
             this.services = [...services]
         } else {
             this.services = [{
-                // id: "0",
+                
                 name: "psichology treat",
-                // description: "pppppppp",
                 price: 150,
                 duration: 60
             },
             {
-                // id: "1",
+                
                 name: "parent guidance",
-                // description: "pppppppp",
                 price: 150,
                 duration: 120
             },]
@@ -33,8 +31,6 @@ class ServiceStore {
     addService = (service) => {
         this.services = [...this.services, service]
     }
-
-
 
 }
 

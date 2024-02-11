@@ -3,8 +3,6 @@ import dataStore from "./dataStore";
 import ServiceStore from "./ServiceStore";
 import Store from "./Store"
 import MeetingStore from "./MeetingStore";
-import AdminHome from "../components/admin/AdminHome";
-import SignIn from "../components/admin/SignIn";
 
 export async function CheckLogin(name, password) {
     try {

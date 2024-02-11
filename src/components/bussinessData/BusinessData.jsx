@@ -8,28 +8,22 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { getBusinessData } from "../../Data/server";
+import { height } from "@mui/system";
 
 const BusinessData = (observer(() => {
   useEffect(() => {
 
-    if (!Store.business) {
-      getBusinessData();
-    }
-
-    getBusinessData();
-
+       getBusinessData();
   }, []);
 
   return (
     <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
-      />
-
+      
       <Box class="sticky-top" sx={{ width: '100%', maxWidth: 1000 }}>
+        <Box style={{alignItems:"center",backgroundColor:'white',width:'180px',height:'180px'}}>
+        <img style ={{width:'170px',height:'175px'}}src="/src\assets\logo.webp"/>
+        </Box>
+        <Box style={{marginLeft:'100px'}}>
         <Typography variant="h2" gutterBottom>
           {Store.business.shem}
         </Typography>
@@ -44,7 +38,7 @@ const BusinessData = (observer(() => {
         <Typography variant="subtitle1" gutterBottom>
           {Store.business.phone}
         </Typography>
-
+        </Box>
       </Box>
 
     </>

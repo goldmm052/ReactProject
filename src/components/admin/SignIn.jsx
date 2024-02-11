@@ -28,14 +28,17 @@ const defaultTheme = createTheme();
 export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const data = new FormData(event.currentTarget);
-    console.log({
-      UserName: data.get('userName'),
-      password: data.get('password'),
-    });
+
     CheckLogin(data.get('userName'), data.get('password'));
+    setusername('');
+    setpassword('');
 
   };
+  const [username, setusername] = React.useState('')
+  const [password, setpassword] = React.useState('')
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -57,6 +60,7 @@ export default function SignIn() {
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
+              value={username}
               required
               fullWidth
               id="userName"
@@ -64,16 +68,19 @@ export default function SignIn() {
               name="userName"
               autoComplete="userName"
               autoFocus
+              onChange={(event) => setusername(event.target.value)}
             />
             <TextField
               margin="normal"
+              value={password}
               required
               fullWidth
-              name="password"
               label="Password"
+              name="password"
+              focused
               type="password"
               id="password"
-              autoComplete="current-password"
+              onChange={(event) => setpassword(event.target.value)}
             />
             <Button
               type="submit"

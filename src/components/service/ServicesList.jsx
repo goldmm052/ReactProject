@@ -15,7 +15,7 @@ const ServicesList = (observer(() => {
   return (
     <>
       <br />
-      <div>
+      <div style={{display:"flex",flexDirection:"column"}}>
 
         {ServiceStore.services.map((service, index) => {
           return (<><div key={index} ><Service service={service} /></div></>)

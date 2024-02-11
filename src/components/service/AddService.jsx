@@ -32,7 +32,7 @@ const AddService = (observer(() => {
   }
   return (
     <>
-      <form onSubmit={handleSubmitNewServiceForm}>
+      <form onSubmit={handleSubmitNewServiceForm}  style={{display:"flex",flexDirection:"column"}}>
         <Box style={{ width: '350px' }} noValidate sx={{ mt: 0.3 }}>
           <TextField
             margin="normal"
@@ -47,7 +47,7 @@ const AddService = (observer(() => {
           />
           <TextField
             margin="normal"
-            required="true"
+            // required="true"
             fullWidth
             name="price"
             label="price"
@@ -57,7 +57,7 @@ const AddService = (observer(() => {
           />
           <TextField
             margin="normal"
-            required="true"
+            // required="true"
             fullWidth
             id="DurationTreat"
             label="Duration Treat"

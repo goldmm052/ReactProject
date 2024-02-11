@@ -10,12 +10,12 @@ business ={};
         })
     }
    setBusinessData=(business)=>{
- 
+
     if (business) {
         this.business = {...business}
     } else {
         this.business ={
-        name:"Machon Psagot",
+        shem:"Machon Psagot",
         address:"Harav Kuk 23 Petah - Tikva",
         phone:"03-1234567",
         owner:"mindi",
